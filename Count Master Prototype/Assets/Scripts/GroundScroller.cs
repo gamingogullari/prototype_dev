@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundScroller : MonoBehaviour
@@ -9,9 +7,6 @@ public class GroundScroller : MonoBehaviour
 
     [SerializeField]
     private GameObject planeB;
-
-    [SerializeField]
-    private float speed;
 
     private float planeMoveDist;
 
@@ -27,8 +22,8 @@ public class GroundScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        planeA.transform.Translate(Vector3.back * speed * Time.deltaTime);
-        planeB.transform.Translate(Vector3.back * speed * Time.deltaTime);
+        planeA.transform.Translate(Vector3.back * GameManager.Instance.scrollSpeed * Time.deltaTime);
+        planeB.transform.Translate(Vector3.back * GameManager.Instance.scrollSpeed * Time.deltaTime);
         
         if(planeA.transform.position.z < - planeMoveDist / 2f)
         {
