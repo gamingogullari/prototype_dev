@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GroundScroller : MonoBehaviour
+public class GroundSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject planeA;
@@ -22,9 +22,6 @@ public class GroundScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        planeA.transform.Translate(Vector3.back * GameManager.Instance.scrollSpeed * Time.deltaTime);
-        planeB.transform.Translate(Vector3.back * GameManager.Instance.scrollSpeed * Time.deltaTime);
-        
         if(planeA.transform.position.z < - planeMoveDist / 2f)
         {
             planeA.transform.Translate(Vector3.forward * planeMoveDist);

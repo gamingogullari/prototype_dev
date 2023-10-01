@@ -22,4 +22,14 @@ public class PlayerController : MonoBehaviour
         finalPos.x = Mathf.Max(-maxOffset, finalPos.x);
         transform.position = finalPos;
     }
+
+    public void GrowMinionCount(int count)
+    {
+        Debug.Log("Gained " + count + " minions");
+    }
+
+    public void ShrinkMinionCount(int count)
+    {
+        Debug.Log(count + " minions are dead");
+    }
 }
