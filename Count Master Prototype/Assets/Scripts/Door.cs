@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField]
-    [Range(-100, 100)]
     private int affectCount;
+
+    [SerializeField]
+    private GameObject affectTextMeshGO;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,5 +25,10 @@ public class Door : MonoBehaviour
                 player.GrowMinionCount(affectCount);
             }
         }
+    }
+
+    public void SetAffectCount(int affectCount)
+    {
+        this.affectCount = affectCount;
     }
 }
