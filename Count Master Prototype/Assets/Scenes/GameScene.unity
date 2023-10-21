@@ -297,6 +297,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45.15, y: 303, z: 0}
+--- !u!1 &754188234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4663453148596311341, guid: d2a04947900abe34097d9477a6498169,
+    type: 3}
+  m_PrefabInstance: {fileID: 839640769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &839640769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,11 +361,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3125181084213434530, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4663453148596311341, guid: d2a04947900abe34097d9477a6498169,
         type: 3}
       propertyPath: m_Name
       value: MinusDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4663453148596311341, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016410530949251831, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: affectCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016410530949251831, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: affectTextMeshGO
+      value: 
+      objectReference: {fileID: 754188234}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -423,10 +449,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3125181084213434530, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4663453148596311341, guid: d2a04947900abe34097d9477a6498169,
         type: 3}
       propertyPath: m_Name
       value: MinusDoor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016410530949251831, guid: d2a04947900abe34097d9477a6498169,
+        type: 3}
+      propertyPath: affectCount
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -525,6 +561,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!1 &1015180136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5919150391713713897, guid: 2695ad15538ca5a41852d4831393cfa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1272838775816353265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1015180137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015180136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aec2df26d775124aa90519a79f9afa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 5
 --- !u!4 &1664007646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1834921588890995368, guid: d2a04947900abe34097d9477a6498169,
@@ -668,10 +723,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: ADAM
       objectReference: {fileID: 0}
+    - target: {fileID: 8464865729678848846, guid: 2695ad15538ca5a41852d4831393cfa7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464865729678848846, guid: 2695ad15538ca5a41852d4831393cfa7,
+        type: 3}
+      propertyPath: sensitivity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5919150391713713897, guid: 2695ad15538ca5a41852d4831393cfa7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1015180137}
   m_SourcePrefab: {fileID: 100100000, guid: 2695ad15538ca5a41852d4831393cfa7, type: 3}
 --- !u!1001 &4845155604574158273
 PrefabInstance:

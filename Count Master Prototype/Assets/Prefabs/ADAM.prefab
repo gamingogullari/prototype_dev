@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7143829373276233507}
   - component: {fileID: 4749000582733038501}
   - component: {fileID: 4175294692994284068}
-  - component: {fileID: 8464865729678848846}
   m_Layer: 7
   m_Name: ADAM
   m_TagString: Untagged
@@ -136,16 +135,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8464865729678848846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5919150391713713897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d0633b2cede4e428e5c5a279723e6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivity: 20

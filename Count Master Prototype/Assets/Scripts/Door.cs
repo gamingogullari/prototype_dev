@@ -5,24 +5,26 @@ using TMPro;
 
 public class Door : MonoBehaviour
 {
-    private int affectCount;
+    [SerializeField]
+    private int affectCount = 3;
 
     [SerializeField]
     private GameObject affectTextMeshGO;
 
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<PlayerController>();
+        PlayerController playerController = ScriptableObject.CreateInstance<PlayerController>();    
+        var player = other.GetComponent<Player>();
         if (player)
         {
             Debug.Log(gameObject.name + " collided with player");
             if(affectCount < 0 )
             {
-                player.ShrinkMinionCount(affectCount);
+                playerController.ShrinkMinionCount(affectCount);
             }
             else
             {
-                player.GrowMinionCount(affectCount);
+                playerController.GrowMinionCount(affectCount);
             }
         }
     }
