@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
 using TMPro;
-using System;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(Door))]
 public class DoorAffectEditorScript : Editor
@@ -12,11 +12,11 @@ public class DoorAffectEditorScript : Editor
     private Door door;
     private TMP_Text affectText;
 
-
     private void OnEnable()
     {
         door = target.GetComponent<Door>();
         affectText = findTMPComponent(door);
+        slideValue = door.GetAffectCount();
     }
 
     public override void OnInspectorGUI()
@@ -28,8 +28,25 @@ public class DoorAffectEditorScript : Editor
         affectText.text = addPlusSignIfPositive(slideValue);
         door.SetAffectCount(slideValue);
         EditorGUILayout.EndHorizontal();
-        EditorUtility.SetDirty(target);
-        EditorUtility.SetDirty(door);
+
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(door);
+            EditorSceneManager.MarkSceneDirty(door.gameObject.scene);
+        }
+
+    }
+
+    private void OnValidate()
+    {
+        affectText.text = addPlusSignIfPositive(slideValue);
+        Debug.Log("Validate called");
+    }
+
+    private void OnDisable()
+    {
+        affectText.text = addPlusSignIfPositive(slideValue);
+        Debug.Log("Disable called");
     }
 
     private string addPlusSignIfPositive(int value)
