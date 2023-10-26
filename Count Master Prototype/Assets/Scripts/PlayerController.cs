@@ -15,13 +15,12 @@ public class PlayerController : ScriptableObject
 
     public void GrowMinionCount(int count)
     {
-        count = 3;
         for (int i = 0; i < count; i++) 
         {
             Vector3 minionPos = new Vector3(
-                minions[0].transform.position.x + Random.Range(-1.0f, 1.0f), 
+                minions[0].transform.position.x + Random.Range(-3.0f, 3.0f), 
                 minions[0].transform.position.y, 
-                minions[0].transform.position.z + Random.Range(-1.0f, 1.0f));
+                minions[0].transform.position.z + Random.Range(-3.0f, 3.0f));
             AddMinion(minionPos);
         }
         Debug.Log("Gained " + count + " minions");
@@ -43,9 +42,10 @@ public class PlayerController : ScriptableObject
 
     public void ShrinkMinionCount(int count)
     {
-        if (minions.Count > count) 
+        if (minions.Count > count)
         {
-            Application.Quit();
+            Debug.LogWarning("GAME OVER");
+            return;
         }
         for (int i = 0; i < count; i++) 
         {
@@ -57,7 +57,11 @@ public class PlayerController : ScriptableObject
     private void RemoveMinion()
     {
         if (activeMinionIndex == 0)
-            Application.Quit();
+        {
+            Debug.LogWarning("GAME OVER");
+            return;
+        }
+
         minions[activeMinionIndex].enabled = false;
         activeMinionIndex--;
     }

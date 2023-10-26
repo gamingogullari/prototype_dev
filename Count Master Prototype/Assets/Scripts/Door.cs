@@ -1,30 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
+
+[System.Serializable]
 public class Door : MonoBehaviour
 {
-    [SerializeField]
-    private int affectCount = 3;
+    private int affectCount;
 
-    [SerializeField]
-    private GameObject affectTextMeshGO;
+    private bool active = true;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!active)
+            return;
+
         PlayerController playerController = ScriptableObject.CreateInstance<PlayerController>();    
         var player = other.GetComponent<Player>();
         if (player)
         {
+            active = false;
+
             Debug.Log(gameObject.name + " collided with player");
             if(affectCount < 0 )
             {
-                playerController.ShrinkMinionCount(affectCount);
+                //TODO: call with ShrinkMinionCount(affectCount)
+                playerController.ShrinkMinionCount(1);
             }
             else
             {
-                playerController.GrowMinionCount(affectCount);
+                //TODO: call with GrowMinionCount(affectCount)
+                playerController.GrowMinionCount(1);
             }
         }
     }

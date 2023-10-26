@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
 using TMPro;
+using System;
 
 [CustomEditor(typeof(Door))]
 public class DoorAffectEditorScript : Editor
