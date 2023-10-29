@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: x1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 3735950976735940400}
   - component: {fileID: 5168528734915239475}
   - component: {fileID: 7667001483876276678}
+  - component: {fileID: 4430803330127453618}
   m_Layer: 6
   m_Name: MultiplyDoor
   m_TagString: Untagged
@@ -343,3 +344,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &4430803330127453618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663453148596311341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2076326bd1a5d46b74623980abf3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectMultiplier: 1
+  affectText: {fileID: 0}

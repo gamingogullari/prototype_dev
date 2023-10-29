@@ -19,8 +19,11 @@ public class MultiplyDoorEditorScript : Editor
     private void OnEnable()
     {
         affectValue = serializedObject.FindProperty("affectMultiplier");
-        affectText = findTMPComponent(target);
-        loadMaterials();
+        affectText = DoorEditorUtils.FindTMPComponent(target);
+        DoorEditorUtils.LoadMaterials(
+            ref notWorkingDoorMaterial,
+            ref plusDoorMaterial,
+            ref minusDoorMaterial);
         renderer = target.GetComponent<Renderer>();
     }
 
@@ -72,36 +75,6 @@ public class MultiplyDoorEditorScript : Editor
     {
         // Use only one digit for decimal part
         return "x" + value.ToString();
-    }
-
-    private void loadMaterials()
-    {
-        notWorkingDoorMaterial = Resources.Load("Material/NotWorkingDoor", typeof(Material)) as Material;
-        plusDoorMaterial = Resources.Load("Material/PlusDoor", typeof(Material)) as Material;
-        minusDoorMaterial = Resources.Load("Material/MinusDoor", typeof(Material)) as Material;
-    }
-
-    private TMP_Text findTMPComponent(Object parent)
-    {
-        // Find the canvas first
-        var childCanvas= target.GetComponentInChildren<Canvas>();
-        if (childCanvas == null)
-        {
-            Debug.LogWarning("Can't find canvas in the children of " 
-                + parent + ". Check if there is a canvas object attached to it");
-            return null;
-        }
-
-        // Find the TextMeshPro component
-        var tmpText = childCanvas.GetComponentInChildren<TMP_Text>();
-        if (tmpText == null)
-        {
-            Debug.LogWarning("Can't find TextMeshPro in the children of "
-                + parent + ". Check if there is a canvas object attached to it");
-            return null;
-        }
-
-        return tmpText;
     }
   
 }
