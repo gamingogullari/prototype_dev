@@ -13,6 +13,12 @@ public class PlayerController : ScriptableObject
         minions.Add(player);
     }
 
+    public void MultiplyMinionCount(float multiplier)
+    {
+        // TODO
+        Debug.Log("Minions multiplied:x" + multiplier);
+    }
+
     public void GrowMinionCount(int count)
     {
         for (int i = 0; i < count; i++) 
